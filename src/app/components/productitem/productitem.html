@@ -1,0 +1,11 @@
+<a class="card" href="#">
+    <div>
+        <img [src]="product.image" [alt]="product.name">
+    </div>
+    <div>
+        <h3>{{ product.name }}</h3>
+        <p>${{ product.price | number:'1.2-2' }}</p>
+    </div>
+</a>
+
+
