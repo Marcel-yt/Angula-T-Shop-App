@@ -1,3 +1,5 @@
-<div>
-    <app-productlist></app-productlist>
+<div class="container"> 
+    <app-productlist 
+        (favoriteAdded)="onFavoriteAdded($event)"
+    /> 
 </div>

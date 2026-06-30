@@ -4,8 +4,17 @@
   <!-- <pre>{{ products() | json }}</pre> --> 
   
   @for (product of products(); track product.id) { 
-    <app-productitem [product]="product"></app-productitem>
+    <app-productitem [product]="product"
+    (displayProductViewModal)="onDisplayProductViewModal($event)">
+    </app-productitem>
   } 
-  
 </div> 
+
+@if (isDisplayModal() && modalProduct()) { 
+  <app-modal-product-view 
+    [product]="modalProduct()" 
+    (close)="onCloseModal()" 
+    (favoriteAdded)="onFavoriteAdded($event)"
+  /> 
+} 
 

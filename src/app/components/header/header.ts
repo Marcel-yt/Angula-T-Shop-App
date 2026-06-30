@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -17,5 +17,7 @@ export class Header {
   closeMenu() {
     this.isMenuOpen = false;
   }
+
+   favoritesCount = input(0); 
 }
 

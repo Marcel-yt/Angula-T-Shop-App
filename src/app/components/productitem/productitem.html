@@ -1,20 +1,20 @@
-<div class="product-card"> 
-  <img [src]="product.imageUrl" [alt]="product.name"> 
+<div class="product-card" (click)="onProductClick()"> 
+  <img [src]="product().imageUrl" [alt]="product().name"> 
 
-  <h3>{{ product.name | uppercase }}</h3> 
+  <h3>{{ product().name }}</h3> 
 
-  <p>{{ product.description }}</p> 
+  <p>{{ product().description }}</p> 
 
   <p class="categories"> 
-    Catégories : {{ product.categories | json }} 
+    Catégories : {{ product().categories.join(', ') }} 
   </p> 
 
   <p class="price"> 
-    <span class="sold">{{ product.soldPrice | currency:'XAF':'symbol' }}</span> 
-    <span class="regular">{{ product.regularPrice | currency:'XAF':'symbol' }}</span> 
+    <span class="sold">{{ product().soldPrice | currency:'XAF':'symbol' }}</span> 
+    <span class="regular">{{ product().regularPrice | currency:'XAF':'symbol' }}</span> 
   </p> 
 
   <p class="date"> 
-    Ajouté le {{ product.createdAt | date:'dd/MM/yyyy' }} 
+    Ajouté le {{ product().createdAt | date:'dd/MM/yyyy' }} 
   </p> 
 </div>

@@ -1,11 +1,13 @@
 <section class="header">
   <div class="header__container">
+
     <div class="header__logo">
       <p class="header__logo-text">Shop</p>
     </div>
     <button class="menu-button" (click)="toggleMenu()">
       <span class="menu-icon"></span>
     </button>
+
     <div class="header__nav-wrapper" [class.open]="isMenuOpen">
       <nav class="header__nav">
         <a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Home</a>
@@ -14,6 +16,11 @@
         <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
       </nav>
     </div>
+
+    <div class="favorites"> 
+      ❤ {{ favoritesCount() }} favoris 
+    </div> 
+    
   </div>
 </section>
 

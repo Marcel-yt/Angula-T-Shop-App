@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { Productlist } from '../productlist/productlist';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-container',
@@ -7,4 +8,10 @@ import { Productlist } from '../productlist/productlist';
   templateUrl: './container.html',
   styleUrl: './container.css',
 })
-export class Container {}
+export class Container {
+   favoriteAdded = output<Product>(); 
+  
+  onFavoriteAdded(product: Product) { 
+    this.favoriteAdded.emit(product); 
+  } 
+}
