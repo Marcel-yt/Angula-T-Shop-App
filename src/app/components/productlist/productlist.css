@@ -1,23 +1,22 @@
-div {
+.product-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
-    padding-top: 40px;
-
-
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 /* TABLET */
 @media (max-width: 1024px) {
-    div {
+    .product-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* MOBILE */
 @media (max-width: 640px) {
-    div {
+    .product-list {
         grid-template-columns: repeat(1, 1fr);
         gap: 15px;
         padding: 15px;

@@ -1,55 +1,96 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Productitem, Product } from '../productitem/productitem';
+import { Product } from '../../models/product';
+import { Productitem } from '../productitem/productitem';
 
 @Component({
   selector: 'app-productlist',
-  imports: [Productitem, CommonModule],
+  imports: [CommonModule, Productitem],
   templateUrl: './productlist.html',
   styleUrl: './productlist.css',
 })
 export class Productlist {
-  products: Product[] = [
-    {
-      image: 'assets/images/products/product1.jpeg',
-      name: 'Product 1',
-      price: 19.99,
-    },
-    {
-      image: 'assets/images/products/product2.jpeg',
-      name: 'Product 2',
-      price: 29.99,
-    },
-    {
-      image: 'assets/images/products/product1.jpeg',
-      name: 'Product 3',
-      price: 39.99,
-    },
-    {
-      image: 'assets/images/products/product2.jpeg',
-      name: 'Product 4',
-      price: 49.99,
-    },
-    {
-      image: 'assets/images/products/product1.jpeg',
-      name: 'Product 5',
-      price: 59.99,
-    },
-    {
-      image: 'assets/images/products/product2.jpeg',
-      name: 'Product 6',
-      price: 69.99,
-    },
-    {
-      image: 'assets/images/products/product1.jpeg',
-      name: 'Product 7',
-      price: 79.99,
-    },
-    {
-      image: 'assets/images/products/product2.jpeg',
-      name: 'Product 8',
-      price: 89.99,
-    },
-  ];
+  products = signal<Product[]>([ 
+    { 
+      id: 1, 
+      name: 'Robe traditionnelle', 
+      description: 'Tissée à la main, motifs Bamiléké', 
+      soldPrice: 22000, 
+      regularPrice: 28000, 
+      imageUrl: '/assets/images/products/product1.jpg', 
+      createdAt: new Date('2026-01-15'), 
+      categories: ['vêtement', 'femme', 'traditionnel'] 
+    }, 
+    { 
+      id: 2, 
+      name: 'Sac en raphia', 
+      description: 'Tressé en fibre de raphia, original', 
+      soldPrice: 10000, 
+      regularPrice: 12000, 
+      imageUrl: '/assets/images/products/product2.jpg', 
+      createdAt: new Date('2026-02-10'), 
+      categories: ['accessoire', 'artisanat'] 
+    }, 
+    { 
+      id: 3, 
+      name: 'Robe traditionnelle', 
+      description: 'Tissée à la main, motifs Bamiléké', 
+      soldPrice: 22000, 
+      regularPrice: 28000, 
+      imageUrl: '/assets/images/products/product1.jpg', 
+      createdAt: new Date('2026-01-15'), 
+      categories: ['vêtement', 'femme', 'traditionnel'] 
+    }, 
+    { 
+      id: 4, 
+      name: 'Sac en raphia', 
+      description: 'Tressé en fibre de raphia, original', 
+      soldPrice: 10000, 
+      regularPrice: 12000, 
+      imageUrl: '/assets/images/products/product2.jpg', 
+      createdAt: new Date('2026-02-10'), 
+      categories: ['accessoire', 'artisanat'] 
+    }, 
+    { 
+      id: 5, 
+      name: 'Robe traditionnelle', 
+      description: 'Tissée à la main, motifs Bamiléké', 
+      soldPrice: 22000, 
+      regularPrice: 28000, 
+      imageUrl: '/assets/images/products/product1.jpg', 
+      createdAt: new Date('2026-01-15'), 
+      categories: ['vêtement', 'femme', 'traditionnel'] 
+    }, 
+    { 
+      id: 6, 
+      name: 'Sac en raphia', 
+      description: 'Tressé en fibre de raphia, original', 
+      soldPrice: 10000, 
+      regularPrice: 12000, 
+      imageUrl: '/assets/images/products/product2.jpg', 
+      createdAt: new Date('2026-02-10'), 
+      categories: ['accessoire', 'artisanat'] 
+    }, 
+    { 
+      id: 7, 
+      name: 'Robe traditionnelle', 
+      description: 'Tissée à la main, motifs Bamiléké', 
+      soldPrice: 22000, 
+      regularPrice: 28000, 
+      imageUrl: '/assets/images/products/product1.jpg', 
+      createdAt: new Date('2026-01-15'), 
+      categories: ['vêtement', 'femme', 'traditionnel'] 
+    }, 
+    { 
+      id: 8, 
+      name: 'Sac en raphia', 
+      description: 'Tressé en fibre de raphia, original', 
+      soldPrice: 10000, 
+      regularPrice: 12000, 
+      imageUrl: '/assets/images/products/product2.jpg', 
+      createdAt: new Date('2026-02-10'), 
+      categories: ['accessoire', 'artisanat'] 
+    }, 
+  ]); 
 }
 

@@ -1,4 +1,11 @@
-<div>
-    <app-productitem *ngFor="let product of products" [product]="product"></app-productitem>
-</div>
+<div class="product-list"> 
+  
+  <!-- Pour debug : afficher le tableau brut en JSON --> 
+  <!-- <pre>{{ products() | json }}</pre> --> 
+  
+  @for (product of products(); track product.id) { 
+    <app-productitem [product]="product"></app-productitem>
+  } 
+  
+</div> 
 

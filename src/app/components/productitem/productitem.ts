@@ -1,15 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
-
-export interface Product {
-  image: string;
-  name: string;
-  price: number;
-}
+import { CommonModule } from '@angular/common';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-productitem',
-  imports: [DecimalPipe],
+  imports: [CommonModule],
   templateUrl: './productitem.html',
   styleUrl: './productitem.css',
 })
